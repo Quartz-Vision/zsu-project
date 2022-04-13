@@ -50,6 +50,8 @@ INSTALLED_APPS = [
 
     'apps.common',
     'apps.user',
+    'apps.general',
+    'apps.military_unit',
 ]
 
 MIDDLEWARE = [
