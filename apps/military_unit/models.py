@@ -31,7 +31,7 @@ class Staff(models.Model):
     staff_military_rank = models.ForeignKey(
         MilitaryRank,
         on_delete=models.CASCADE,
-        related_name='military_unit_staff'
+        related_name='military_unit_inner_staff'
     )
     military_rank = models.ForeignKey(
         MilitaryRank,
