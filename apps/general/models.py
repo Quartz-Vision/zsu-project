@@ -1,7 +1,9 @@
 from django.db import models
 
+from apps.common.models import UUIDModel
 
-class MilitarySpecialization(models.Model):
+
+class MilitarySpecialization(UUIDModel):
     name = models.CharField(max_length=255)
     identifier = models.IntegerField()
 
@@ -9,28 +11,28 @@ class MilitarySpecialization(models.Model):
         return self.name
 
 
-class MilitaryRank(models.Model):
+class MilitaryRank(UUIDModel):
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
 
-class Position(models.Model):
+class Position(UUIDModel):
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
 
-class TariffCategory(models.Model):
+class TariffCategory(UUIDModel):
     identifier = models.CharField(max_length=255)
 
     def __str__(self):
         return str(self.identifier)
 
 
-class TariffGrid(models.Model):
+class TariffGrid(UUIDModel):
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     tariff_category = models.ForeignKey(TariffCategory, on_delete=models.CASCADE)
     salary = models.PositiveIntegerField()
@@ -39,7 +41,7 @@ class TariffGrid(models.Model):
         return f"Тариф для {self.position}, {self.tariff_category} розряду: {self.salary}"
 
 
-class PremiumGrid(models.Model):
+class PremiumGrid(UUIDModel):
     tariff_category = models.ForeignKey(TariffCategory, on_delete=models.CASCADE)
     premium = models.PositiveIntegerField()
 
@@ -47,14 +49,14 @@ class PremiumGrid(models.Model):
         return f"Премія {self.tariff_category} розряду: {self.premium}"
 
 
-class WacationType(models.Model):
+class WacationType(UUIDModel):
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
 
-class PaymentType(models.Model):
+class PaymentType(UUIDModel):
     name = models.CharField(max_length=255)
 
     def __str__(self):
