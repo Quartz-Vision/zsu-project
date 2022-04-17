@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from apps.military_unit.models import MilitaryUnit, Staff
+
+admin.site.register(MilitaryUnit)
+admin.site.register(Staff)
