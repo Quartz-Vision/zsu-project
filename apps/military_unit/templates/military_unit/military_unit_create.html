@@ -1,11 +1,13 @@
-{% extends "base.html" %}
+{% extends "zsu_common/base.html" %}
+
+{% load django_bootstrap5 %}
+
 
 {% block title %}My amazing blog{% endblock %}
 
 {% block content %}
     <form action="" method="post"> {% csrf_token %}
-        {{ form }}
-        <br>
-        <button type="submit">Submit</button>
+        {% bootstrap_form form %}
+        {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
     </form>
 {% endblock %}
