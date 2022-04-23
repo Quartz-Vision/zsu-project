@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'corsheaders',
-    'django_bootstrap5',
+    'bootstrap4',
 
     'apps.common',
     'apps.user',
