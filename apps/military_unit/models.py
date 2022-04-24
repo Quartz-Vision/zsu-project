@@ -89,5 +89,5 @@ class Staff(UUIDModel):
     )
 
     def __str__(self):
-        return f'{self.full_name} ({self.staff_military_rank}) з {self.military_unit.name}'
+        return f'{self.person.full_name} ({self.inner_military_rank}) з {self.military_unit.name}'
 
