@@ -63,7 +63,7 @@ class Person(UUIDModel):
         return f'{self.last_name} {self.middle_name} {self.first_name}'
 
     def __str__(self):
-        return f'{self.full_name} ({self.military_rank})' + (f' з {self.staff_role.military_unit.name}' if self.staff_role else '')
+        return f'{self.full_name} ({self.military_rank})'
 
 
 class Staff(UUIDModel):
