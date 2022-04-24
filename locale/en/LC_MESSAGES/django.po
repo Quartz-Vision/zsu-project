@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-24 10:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps/common/models.py:22 apps/common/models.py:40
+msgid "City"
+msgstr ""
+
+#: apps/common/models.py:23
+msgid "Cities"
+msgstr ""
+
+#: apps/common/models.py:25
+msgid "Name"
+msgstr ""
+
+#: apps/common/models.py:33
+msgid "Street Address"
+msgstr ""
+
+#: apps/common/models.py:34
+msgid "Street Addresses"
+msgstr ""
+
+#: apps/common/models.py:43
+msgid "Street name"
+msgstr ""
+
+#: apps/military_unit/models.py:10
+msgid "Military Unit"
+msgstr ""
+
+#: apps/military_unit/models.py:11
+msgid "Military Units"
+msgstr ""
+
+#: apps/military_unit/models.py:26 apps/military_unit/models.py:110
+msgid "Person"
+msgstr ""
+
+#: apps/military_unit/models.py:27
+msgid "Persons"
+msgstr ""
+
+#: apps/military_unit/models.py:30
+msgid "Male"
+msgstr ""
+
+#: apps/military_unit/models.py:31
+msgid "Female"
+msgstr ""
+
+#: apps/military_unit/models.py:36
+msgid "Last name"
+msgstr ""
+
+#: apps/military_unit/models.py:37
+msgid "Middle name"
+msgstr ""
+
+#: apps/military_unit/models.py:38
+msgid "Gender"
+msgstr ""
+
+#: apps/military_unit/models.py:39
+msgid "Birth date"
+msgstr ""
+
+#: apps/military_unit/models.py:45
+msgid "Address"
+msgstr ""
+
+#: apps/military_unit/models.py:47
+msgid "Family status"
+msgstr ""
+
+#: apps/military_unit/models.py:48
+msgid "Children number"
+msgstr ""
+
+#: apps/military_unit/models.py:50
+msgid "Phone number"
+msgstr ""
+
+#: apps/military_unit/models.py:52
+msgid "TIN"
+msgstr ""
+
+#: apps/military_unit/models.py:58
+msgid "Recruitment office"
+msgstr ""
+
+#: apps/military_unit/models.py:64
+msgid "Military rank"
+msgstr ""
+
+#: apps/military_unit/models.py:70
+msgid "Military specialization"
+msgstr ""
+
+#: apps/military_unit/models.py:72
+msgid "Length of service"
+msgstr ""
+
+#: apps/military_unit/models.py:73
+msgid "Contract term"
+msgstr ""
+
+#: apps/military_unit/models.py:85 apps/military_unit/models.py:86
+msgid "Staff"
+msgstr ""
+
+#: apps/military_unit/models.py:92
+msgid "Military unit"
+msgstr ""
+
+#: apps/military_unit/models.py:98
+msgid "Tariff"
+msgstr ""
+
+#: apps/military_unit/models.py:104
+msgid "Inner military rank"
+msgstr ""
