@@ -1,6 +1,7 @@
 {% extends "zsu_common/base.html" %}
 
 {% load bootstrap4 %}
+{% load i18n %}
 
 
 {% block title %}ZSU{% endblock %}
@@ -9,7 +10,7 @@
     <form action="" method="post"> {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
         {% endbuttons %}
     </form>
 {% endblock %}

@@ -30,9 +30,7 @@ class Person(UUIDModel):
         MALE = 'M', _('Male')
         FEMALE = 'F', _('Female')
 
-    first_name = models.CharField(
-        max_length=255,
-    )
+    first_name = models.CharField(max_length=255, verbose_name=_('First name'))
     last_name = models.CharField(max_length=255, verbose_name=_('Last name'))
     middle_name = models.CharField(max_length=255, verbose_name=_('Middle name'))
     gender = models.CharField(max_length=3, choices=GenderChoices.choices, verbose_name=_('Gender'))

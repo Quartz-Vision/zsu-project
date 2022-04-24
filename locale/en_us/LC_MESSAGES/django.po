@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 11:36+0000\n"
+"POT-Creation-Date: 2022-04-24 11:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,7 @@ msgid "UUID Models"
 msgstr ""
 
 #: apps/common/models.py:24 apps/common/models.py:42
+#: apps/military_unit/forms.py:9
 msgid "City"
 msgstr ""
 
@@ -120,6 +121,10 @@ msgstr ""
 msgid "Payment Types"
 msgstr ""
 
+#: apps/military_unit/forms.py:10 apps/military_unit/models.py:43
+msgid "Address"
+msgstr ""
+
 #: apps/military_unit/models.py:10
 msgid "Military Unit"
 msgstr ""
@@ -128,7 +133,7 @@ msgstr ""
 msgid "Military Units"
 msgstr ""
 
-#: apps/military_unit/models.py:26 apps/military_unit/models.py:110
+#: apps/military_unit/models.py:26 apps/military_unit/models.py:108
 msgid "Person"
 msgstr ""
 
@@ -144,74 +149,78 @@ msgstr ""
 msgid "Female"
 msgstr ""
 
-#: apps/military_unit/models.py:36
+#: apps/military_unit/models.py:33
+msgid "First name"
+msgstr ""
+
+#: apps/military_unit/models.py:34
 msgid "Last name"
 msgstr ""
 
-#: apps/military_unit/models.py:37
+#: apps/military_unit/models.py:35
 msgid "Middle name"
 msgstr ""
 
-#: apps/military_unit/models.py:38
+#: apps/military_unit/models.py:36
 msgid "Gender"
 msgstr ""
 
-#: apps/military_unit/models.py:39
+#: apps/military_unit/models.py:37
 msgid "Birth date"
 msgstr ""
 
 #: apps/military_unit/models.py:45
-msgid "Address"
-msgstr ""
-
-#: apps/military_unit/models.py:47
 msgid "Family status"
 msgstr ""
 
-#: apps/military_unit/models.py:48
+#: apps/military_unit/models.py:46
 msgid "Children number"
 msgstr ""
 
-#: apps/military_unit/models.py:50
+#: apps/military_unit/models.py:48
 msgid "Phone number"
 msgstr ""
 
-#: apps/military_unit/models.py:52
+#: apps/military_unit/models.py:50
 msgid "TIN"
 msgstr ""
 
-#: apps/military_unit/models.py:58
+#: apps/military_unit/models.py:56
 msgid "Recruitment office"
 msgstr ""
 
-#: apps/military_unit/models.py:64
+#: apps/military_unit/models.py:62
 msgid "Military rank"
 msgstr ""
 
-#: apps/military_unit/models.py:70
+#: apps/military_unit/models.py:68
 msgid "Military specialization"
 msgstr ""
 
-#: apps/military_unit/models.py:72
+#: apps/military_unit/models.py:70
 msgid "Length of service"
 msgstr ""
 
-#: apps/military_unit/models.py:73
+#: apps/military_unit/models.py:71
 msgid "Contract term"
 msgstr ""
 
-#: apps/military_unit/models.py:85 apps/military_unit/models.py:86
+#: apps/military_unit/models.py:83 apps/military_unit/models.py:84
 msgid "Staff"
 msgstr ""
 
-#: apps/military_unit/models.py:92
+#: apps/military_unit/models.py:90
 msgid "Military unit"
 msgstr ""
 
-#: apps/military_unit/models.py:98
+#: apps/military_unit/models.py:96
 msgid "Tariff"
 msgstr ""
 
-#: apps/military_unit/models.py:104
+#: apps/military_unit/models.py:102
 msgid "Inner military rank"
+msgstr ""
+
+#: apps/military_unit/templates/military_unit/military_unit_create.html:13
+msgid "Submit"
 msgstr ""

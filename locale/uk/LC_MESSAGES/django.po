@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 11:36+0000\n"
+"POT-Creation-Date: 2022-04-24 11:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,7 @@ msgid "UUID Models"
 msgstr "UUID Моделі"
 
 #: apps/common/models.py:24 apps/common/models.py:42
+#: apps/military_unit/forms.py:9
 msgid "City"
 msgstr "Місто"
 
@@ -124,6 +125,10 @@ msgstr "Тип Виплати"
 msgid "Payment Types"
 msgstr "Типи Виплат"
 
+#: apps/military_unit/forms.py:10 apps/military_unit/models.py:43
+msgid "Address"
+msgstr "Адреса"
+
 #: apps/military_unit/models.py:10
 msgid "Military Unit"
 msgstr "Військова Частина"
@@ -132,7 +137,7 @@ msgstr "Військова Частина"
 msgid "Military Units"
 msgstr "Військові Частини"
 
-#: apps/military_unit/models.py:26 apps/military_unit/models.py:110
+#: apps/military_unit/models.py:26 apps/military_unit/models.py:108
 msgid "Person"
 msgstr "Особа"
 
@@ -148,74 +153,78 @@ msgstr "Чоловік"
 msgid "Female"
 msgstr "Жінка"
 
-#: apps/military_unit/models.py:36
+#: apps/military_unit/models.py:33
+msgid "First name"
+msgstr "Ім'я"
+
+#: apps/military_unit/models.py:34
 msgid "Last name"
 msgstr "Прізвище"
 
-#: apps/military_unit/models.py:37
+#: apps/military_unit/models.py:35
 msgid "Middle name"
 msgstr "По батькові"
 
-#: apps/military_unit/models.py:38
+#: apps/military_unit/models.py:36
 msgid "Gender"
 msgstr "Стать"
 
-#: apps/military_unit/models.py:39
+#: apps/military_unit/models.py:37
 msgid "Birth date"
 msgstr "Дата народження"
 
 #: apps/military_unit/models.py:45
-msgid "Address"
-msgstr "Адреса"
-
-#: apps/military_unit/models.py:47
 msgid "Family status"
 msgstr "Сімейний статус"
 
-#: apps/military_unit/models.py:48
+#: apps/military_unit/models.py:46
 msgid "Children number"
 msgstr "Кількість дітей"
 
-#: apps/military_unit/models.py:50
+#: apps/military_unit/models.py:48
 msgid "Phone number"
 msgstr "Номер телефону"
 
-#: apps/military_unit/models.py:52
+#: apps/military_unit/models.py:50
 msgid "TIN"
 msgstr "ІПН"
 
-#: apps/military_unit/models.py:58
+#: apps/military_unit/models.py:56
 msgid "Recruitment office"
 msgstr "Військкомат"
 
-#: apps/military_unit/models.py:64
+#: apps/military_unit/models.py:62
 msgid "Military rank"
 msgstr "Військова звання"
 
-#: apps/military_unit/models.py:70
+#: apps/military_unit/models.py:68
 msgid "Military specialization"
 msgstr "Військова спеціальність"
 
-#: apps/military_unit/models.py:72
+#: apps/military_unit/models.py:70
 msgid "Length of service"
 msgstr "Вислуга"
 
-#: apps/military_unit/models.py:73
+#: apps/military_unit/models.py:71
 msgid "Contract term"
 msgstr "Термін контракту"
 
-#: apps/military_unit/models.py:85 apps/military_unit/models.py:86
+#: apps/military_unit/models.py:83 apps/military_unit/models.py:84
 msgid "Staff"
 msgstr "Штаб"
 
-#: apps/military_unit/models.py:92
+#: apps/military_unit/models.py:90
 msgid "Military unit"
 msgstr "Військова частина"
 
-#: apps/military_unit/models.py:98
+#: apps/military_unit/models.py:96
 msgid "Tariff"
 msgstr "Тариф"
 
-#: apps/military_unit/models.py:104
+#: apps/military_unit/models.py:102
 msgid "Inner military rank"
 msgstr "Військове звання в частині"
+
+#: apps/military_unit/templates/military_unit/military_unit_create.html:13
+msgid "Submit"
+msgstr "Підтвердити"
