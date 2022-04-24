@@ -26,7 +26,7 @@ class Person(UUIDModel):
         verbose_name = _('Person')
         verbose_name_plural = _('Persons')
 
-    class GenderChoices(models.Choices):
+    class GenderChoices(models.TextChoices):
         MALE = 'M', _('Male')
         FEMALE = 'F', _('Female')
 
@@ -112,4 +112,3 @@ class Staff(UUIDModel):
 
     def __str__(self):
         return f'{self.person.full_name} ({self.inner_military_rank}) з {self.military_unit.name}'
-

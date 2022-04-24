@@ -11,6 +11,8 @@ class UUIDModel(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
 
     class Meta:
+        verbose_name = _('UUID Model')
+        verbose_name_plural = _('UUID Models')
         abstract = True
 
     def __str__(self):

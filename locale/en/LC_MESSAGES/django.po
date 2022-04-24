@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 10:58+0000\n"
+"POT-Creation-Date: 2022-04-24 11:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,107 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/common/models.py:22 apps/common/models.py:40
+#: apps/common/models.py:14
+msgid "UUID Model"
+msgstr ""
+
+#: apps/common/models.py:15
+msgid "UUID Models"
+msgstr ""
+
+#: apps/common/models.py:24 apps/common/models.py:42
 msgid "City"
 msgstr ""
 
-#: apps/common/models.py:23
+#: apps/common/models.py:25
 msgid "Cities"
 msgstr ""
 
-#: apps/common/models.py:25
+#: apps/common/models.py:27 apps/general/models.py:12 apps/general/models.py:24
+#: apps/general/models.py:35 apps/general/models.py:82
+#: apps/general/models.py:93
 msgid "Name"
 msgstr ""
 
-#: apps/common/models.py:33
+#: apps/common/models.py:35
 msgid "Street Address"
 msgstr ""
 
-#: apps/common/models.py:34
+#: apps/common/models.py:36
 msgid "Street Addresses"
 msgstr ""
 
-#: apps/common/models.py:43
+#: apps/common/models.py:45
 msgid "Street name"
+msgstr ""
+
+#: apps/general/models.py:9
+msgid "Military Specialization"
+msgstr ""
+
+#: apps/general/models.py:10
+msgid "Military Specializations"
+msgstr ""
+
+#: apps/general/models.py:13 apps/general/models.py:46
+msgid "Identifier"
+msgstr ""
+
+#: apps/general/models.py:21
+msgid "Military Rank"
+msgstr ""
+
+#: apps/general/models.py:22
+msgid "Military Ranks"
+msgstr ""
+
+#: apps/general/models.py:32 apps/general/models.py:57
+msgid "Position"
+msgstr ""
+
+#: apps/general/models.py:33
+msgid "Positions"
+msgstr ""
+
+#: apps/general/models.py:43 apps/general/models.py:58
+#: apps/general/models.py:70
+msgid "Tariff Category"
+msgstr ""
+
+#: apps/general/models.py:44
+msgid "Tariff Categories"
+msgstr ""
+
+#: apps/general/models.py:54 apps/general/models.py:55
+msgid "Tariff Grid"
+msgstr ""
+
+#: apps/general/models.py:59
+msgid "Salary"
+msgstr ""
+
+#: apps/general/models.py:67 apps/general/models.py:68
+msgid "Premium Grid"
+msgstr ""
+
+#: apps/general/models.py:71
+msgid "Premium"
+msgstr ""
+
+#: apps/general/models.py:79
+msgid "Wacation Type"
+msgstr ""
+
+#: apps/general/models.py:80
+msgid "Wacation Types"
+msgstr ""
+
+#: apps/general/models.py:90
+msgid "Payment Type"
+msgstr ""
+
+#: apps/general/models.py:91
+msgid "Payment Types"
 msgstr ""
 
 #: apps/military_unit/models.py:10
