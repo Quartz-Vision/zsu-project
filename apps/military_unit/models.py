@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from apps.common.models import StreetAddress, UUIDModel
-from apps.general.models import MilitaryRank, MilitarySpecialization, TariffGrid
+from apps.general.models import MilitaryRank, MilitarySpecialization, TariffGrid, Position
 
 
 class MilitaryUnit(UUIDModel):
@@ -10,11 +10,13 @@ class MilitaryUnit(UUIDModel):
         verbose_name = _('Military Unit')
         verbose_name_plural = _('Military Units')
 
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, verbose_name=_('Name'))
+    military_number = models.IntegerField(verbose_name=_('Identifier'))
     address = models.ForeignKey(
         StreetAddress,
         on_delete=models.CASCADE,
-        related_name='military_units'
+        related_name='military_units',
+        verbose_name=_('Address'),
     )
 
     def __str__(self):
@@ -41,6 +43,11 @@ class Person(UUIDModel):
         on_delete=models.CASCADE,
         related_name='persons',
         verbose_name=_('Address')
+    )
+    position = models.ForeignKey(
+        Position,
+        on_delete=models.CASCADE,
+        related_name='position',
     )
     family_status = models.CharField(max_length=255, verbose_name=_('Family status'))
     children_number = models.PositiveIntegerField(verbose_name=_('Children number'))
