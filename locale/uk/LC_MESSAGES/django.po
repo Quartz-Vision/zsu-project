@@ -228,3 +228,28 @@ msgstr "Військове звання в частині"
 #: apps/military_unit/templates/military_unit/military_unit_create.html:13
 msgid "Submit"
 msgstr "Підтвердити"
+
+#: apps/docs/models.py:10
+msgid "Incoming document"
+msgstr "Вхідний документ"
+
+#: apps/docs/models.py:11
+msgid "Incoming documents"
+msgstr "Вхідні документи"
+
+#: apps/docs/models.py:15
+msgid "Date"
+msgstr "Дата"
+
+#: apps/docs/models.py:14
+msgid "Incoming"
+msgstr "Вхідний"
+
+#: apps/docs/models.py:15
+msgid "Output"
+msgstr "Вихідний"
+
+#: apps/docs/models.py:18
+msgid "Type"
+msgstr "Тип"
+

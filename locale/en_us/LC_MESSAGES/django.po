@@ -224,3 +224,31 @@ msgstr ""
 #: apps/military_unit/templates/military_unit/military_unit_create.html:13
 msgid "Submit"
 msgstr ""
+
+#: apps/docs/templates/military_unit/military_unit_create.html:13
+msgid "Incoming document"
+msgstr ""
+
+#: apps/docs/models.py:10
+msgid "Incoming document"
+msgstr ""
+
+#: apps/docs/models.py:11
+msgid "Incoming documents"
+msgstr ""
+
+#: apps/docs/models.py:15
+msgid "Date"
+msgstr ""
+
+#: apps/docs/models.py:14
+msgid "Incoming"
+msgstr ""
+
+#: apps/docs/models.py:15
+msgid "Output"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Type"
+msgstr ""
