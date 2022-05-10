@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     'apps.common',
     'apps.user',
+    'apps.docs',
     'apps.general',
     'apps.military_unit',
 ]
@@ -182,7 +183,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_METHODS = default_methods
 CORS_ALLOW_HEADERS = default_headers
 ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '').split(',')]
-
+ALLOWED_HOSTS = ["*"]
 ROOT_URLCONF = 'zsu_backend.urls'
 
 BACKEND_DOMAIN = os.getenv('BACKEND_DOMAIN')

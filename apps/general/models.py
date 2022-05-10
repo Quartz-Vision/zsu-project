@@ -54,7 +54,12 @@ class TariffGrid(UUIDModel):
         verbose_name = _('Tariff Grid')
         verbose_name_plural = _('Tariff Grid')
 
-    position = models.ForeignKey(Position, on_delete=models.CASCADE, verbose_name=_('Position'))
+    position = models.ForeignKey(
+        Position,
+        on_delete=models.CASCADE,
+        verbose_name=_('Position'),
+        related_name="tariff_grid",
+    )
     tariff_category = models.ForeignKey(TariffCategory, on_delete=models.CASCADE, verbose_name=_('Tariff Category'))
     salary = models.PositiveIntegerField(verbose_name=_('Salary'))
 
@@ -67,7 +72,12 @@ class PremiumGrid(UUIDModel):
         verbose_name = _('Premium Grid')
         verbose_name_plural = _('Premium Grid')
 
-    tariff_category = models.ForeignKey(TariffCategory, on_delete=models.CASCADE, verbose_name=_('Tariff Category'))
+    tariff_category = models.ForeignKey(
+        TariffCategory,
+        on_delete=models.CASCADE,
+        verbose_name=_('Tariff Category'),
+        related_name="premium_grid",
+    )
     premium = models.PositiveIntegerField(verbose_name=_('Premium'))
 
     def __str__(self):
@@ -89,6 +99,17 @@ class PaymentType(UUIDModel):
     class Meta:
         verbose_name = _('Payment Type')
         verbose_name_plural = _('Payment Types')
+
+    name = models.CharField(max_length=255, verbose_name=_('Name'))
+
+    def __str__(self):
+        return self.name
+
+
+class ReasonType(UUIDModel):
+    class Meta:
+        verbose_name = _('Reason Type')
+        verbose_name_plural = _('Reason Types')
 
     name = models.CharField(max_length=255, verbose_name=_('Name'))
 

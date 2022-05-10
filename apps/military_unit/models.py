@@ -6,12 +6,13 @@ from apps.general.models import MilitaryRank, MilitarySpecialization, TariffGrid
 
 
 class MilitaryUnit(UUIDModel):
+
     class Meta:
         verbose_name = _('Military Unit')
         verbose_name_plural = _('Military Units')
 
     name = models.CharField(max_length=255, verbose_name=_('Name'))
-    military_number = models.IntegerField(verbose_name=_('Identifier'))
+    military_number = models.CharField(max_length=50, verbose_name=_('Identifier'))
     address = models.ForeignKey(
         StreetAddress,
         on_delete=models.CASCADE,
@@ -21,6 +22,22 @@ class MilitaryUnit(UUIDModel):
 
     def __str__(self):
         return self.name
+
+
+class MilitaryUnitInfo(UUIDModel):
+
+    class Meta:
+        verbose_name = _('Military Unit Info')
+        verbose_name_plural = _('Military Units Info')
+
+    military_unit = models.OneToOneField(
+        MilitaryUnit,
+        on_delete=models.CASCADE,
+        related_name="military_unit_info",
+        verbose_name=_('Military Unit')
+    )
+    commander_name = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Commander name'))
+    chief_name = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Chief name'))
 
 
 class Person(UUIDModel):
@@ -117,3 +134,31 @@ class Staff(UUIDModel):
 
     def __str__(self):
         return f'{self.person.full_name} ({self.inner_military_rank}) з {self.military_unit.name}'
+
+
+class Personnel(UUIDModel):
+
+    class Meta:
+        verbose_name = _('Personnel')
+        verbose_name_plural = _('Personnel')
+
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="personnel")
+    position = models.ForeignKey(
+        Position,
+        on_delete=models.CASCADE,
+        related_name='personnel',
+        verbose_name=_('Position'),
+    )
+    assigned_salary = models.PositiveIntegerField()
+    tariff = models.ForeignKey(
+        TariffGrid,
+        on_delete=models.CASCADE,
+        related_name='personnel',
+        verbose_name=_('Tariff')
+    )
+    military_registration_specialty = models.CharField(max_length=255)
+    military_rank_by_personnel = models.CharField(max_length=255)
+    military_rank_factually = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f'{self.person.full_name}'
