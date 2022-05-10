@@ -7,7 +7,8 @@ from apps.general.models import(
     TariffGrid,
     PremiumGrid,
     WacationType,
-    PaymentType
+    PaymentType,
+    ReasonType,
 )
 
 admin.site.register(MilitarySpecialization)
@@ -18,3 +19,4 @@ admin.site.register(TariffGrid)
 admin.site.register(PremiumGrid)
 admin.site.register(WacationType)
 admin.site.register(PaymentType)
+admin.site.register(ReasonType)
