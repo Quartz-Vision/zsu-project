@@ -27,15 +27,15 @@ class MilitaryRank(UUIDModel):
         return self.name
 
 
-class Position(UUIDModel):
+class PremiumGrid(UUIDModel):
     class Meta:
-        verbose_name = _('Position')
-        verbose_name_plural = _('Positions')
+        verbose_name = _('Premium Grid')
+        verbose_name_plural = _('Premium Grid')
 
-    name = models.CharField(max_length=255, verbose_name=_('Name'))
+    premium = models.PositiveIntegerField(verbose_name=_('Premium'))
 
     def __str__(self):
-        return self.name
+        return f"Премія: {self.premium}"
 
 
 class TariffCategory(UUIDModel):
@@ -43,6 +43,12 @@ class TariffCategory(UUIDModel):
         verbose_name = _('Tariff Category')
         verbose_name_plural = _('Tariff Categories')
 
+    premium_grid = models.ForeignKey(
+        PremiumGrid,
+        on_delete=models.CASCADE,
+        verbose_name=_('Premium Grid'),
+        related_name="tariff_category",
+    )
     identifier = models.CharField(max_length=255, verbose_name=_('Identifier'))
 
     def __str__(self):
@@ -54,12 +60,6 @@ class TariffGrid(UUIDModel):
         verbose_name = _('Tariff Grid')
         verbose_name_plural = _('Tariff Grid')
 
-    position = models.ForeignKey(
-        Position,
-        on_delete=models.CASCADE,
-        verbose_name=_('Position'),
-        related_name="tariff_grid",
-    )
     tariff_category = models.ForeignKey(TariffCategory, on_delete=models.CASCADE, verbose_name=_('Tariff Category'))
     salary = models.PositiveIntegerField(verbose_name=_('Salary'))
 
@@ -67,21 +67,21 @@ class TariffGrid(UUIDModel):
         return f"Тариф для {self.position}, {self.tariff_category} розряду: {self.salary}"
 
 
-class PremiumGrid(UUIDModel):
+class Position(UUIDModel):
     class Meta:
-        verbose_name = _('Premium Grid')
-        verbose_name_plural = _('Premium Grid')
+        verbose_name = _('Position')
+        verbose_name_plural = _('Positions')
 
-    tariff_category = models.ForeignKey(
-        TariffCategory,
+    name = models.CharField(max_length=255, verbose_name=_('Name'))
+    tariff = models.ForeignKey(
+        TariffGrid,
         on_delete=models.CASCADE,
-        verbose_name=_('Tariff Category'),
-        related_name="premium_grid",
+        verbose_name=_('Tariff Grid'),
+        related_name="position",
     )
-    premium = models.PositiveIntegerField(verbose_name=_('Premium'))
 
     def __str__(self):
-        return f"Премія {self.tariff_category} розряду: {self.premium}"
+        return self.name
 
 
 class WacationType(UUIDModel):
