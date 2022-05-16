@@ -1,14 +1,16 @@
 from datetime import datetime
 
 from django import forms
+from django.shortcuts import get_object_or_404
 from django.utils.translation import gettext_lazy as _
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.contrib.admin.widgets import AdminDateWidget
 from django.forms.fields import DateField
 
 from apps.common.models import City, StreetAddress
-from apps.general.models import Position, ReasonType, TariffGrid
+from apps.general.models import Position, ReasonType
 from apps.docs.models import Docs, DocTemplate
-from apps.military_unit.models import Person, MilitaryUnit, Personnel
+from apps.military_unit.models import Person, MilitaryUnit, Staff
 from apps.docs.doc_utils import ContextGenerator, generate_document
 
 
@@ -92,37 +94,39 @@ class AddToThePersonnelForm(forms.Form):
 
     def clean(self):
         data = super(AddToThePersonnelForm, self).clean()
-        print(f"CLEAN: {data}")
+        self._handle_personnel_form(data=data)
+        return data
+
+    @staticmethod
+    def _handle_personnel_form(data: dict) -> None:
+        """
+        Generate and save document and change a Personnel object
+        """
         date: datetime = data.get("date")
         person: Person = data.get('person')
         position: Position = data.get("position")
         reason: ReasonType = data.get("reason")
         template_document = data.get("document_in").file
-        tariff = TariffGrid.objects.first()  # TODO: incorrect relational
-        salary = tariff.salary
         document_number = data.get("document_number")
+        # Change a Personnel person field
+        staff = get_object_or_404(Staff, position=position)
+        staff.person = person
+        staff.save()
         # Get context for document generation
         context = ContextGenerator.get_extract_from_the_order_context(
             date=date,
+            staff=staff,
             person=person,
             reason=reason,
             position=position,
             document_number=document_number,
         )
         # Save document to database
-        generated_document = generate_document(template=template_document, context_data=context)
-        print(f"generated_document: {generated_document}, {type(generated_document)}")
-        document = Docs(name=person.full_name, number=document_number, date=date, reason=reason, file=generated_document)
-        document.file.save(generated_document.name, generated_document)
-        document.save()
-        # Create Personnel in database
-        Personnel(
-            person=person,
-            position=position,
-            assigned_salary=salary,
-            tariff=tariff,
-            military_registration_specialty="military_registration_specialty",  # TODO: change to real data
-            military_rank_by_personnel="military_rank_by_personnel",
-            military_rank_factually="military_rank_factually",
+        generated_document: InMemoryUploadedFile = generate_document(template=template_document, context_data=context)
+        Docs(
+            date=date,
+            reason=reason,
+            name=person.full_name,
+            number=document_number,
+            file=generated_document,
         ).save()
-        return data
