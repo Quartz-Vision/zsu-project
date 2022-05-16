@@ -7,7 +7,7 @@
     <div class="card">
         <h5 class="card-header">{% trans "Military card" %}</h5>
         <div class="card-body">
-            <h5 class="card-title">{{ person.last_name }} {{ person.first_name }} {{ person.middle_name }}</h5>
+            <h5 class="card-title">{{ person.full_name }}</h5>
             <p class="card-text">{% trans "Birth date" %}: {{ person.birth_date }}</p>
             <p class="card-text">{% trans "Military rank" %}: {{ person.military_rank }}</p>
             <p class="card-text">{% trans "Position" %}: {{ person.position }}</p>

@@ -2,7 +2,7 @@ from django.utils.translation import gettext_lazy as _
 
 from django.db import models
 
-from apps.common.models import UUIDModel
+from apps.common.models import UUIDModel, TimeStamp
 from apps.general.models import ReasonType
 
 
@@ -18,7 +18,7 @@ class Docs(UUIDModel):
     file = models.FileField(upload_to="generated_docs/", verbose_name=_('File'))
 
 
-class DocTemplate(UUIDModel):
+class DocTemplate(UUIDModel, TimeStamp):
     """Template for generating a document"""
     class Meta:
         verbose_name = _('Incoming document')

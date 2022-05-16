@@ -263,7 +263,11 @@ msgid "ZSU"
 msgstr ""
 
 #: apps/docs/models.py:18
-msgid "Military unit info"
+msgid "Military Unit Info"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Military Units Info"
 msgstr ""
 
 #: apps/docs/models.py:18
@@ -286,3 +290,34 @@ msgstr ""
 msgid "Military number"
 msgstr ""
 
+#: apps/general/models.py:22
+msgid "Person military Rank"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "MU Commander"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Commander rank"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Chief"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Chief rank"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Back"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Reason Type"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Reason Types"
+msgstr ""

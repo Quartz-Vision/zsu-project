@@ -1,0 +1,33 @@
+{% extends "zsu_common/base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% trans "Staff" %}{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">{% trans "Position" %}</th>
+            <th scope="col">{% trans "Position" %}Пос</th>
+            <th scope="col">{% trans "Position" %}Тариф</th>
+            <th scope="col">{% trans "Military Rank" %}</th>
+            <th scope="col">{% trans "Person military Rank" %}</th>
+            <th scope="col">{% trans "Full name" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for each in staff %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ each.position }}</td>
+                <td>{{ each.salary }}</td>
+                <td>{{ each.tariff.tariff_category.identifierx }}</td>
+                <td>{{ each.inner_military_rank }}</td>
+                <td>{{ each.military_rank_factually }}</td>
+                <td>{{ each.person.full_name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

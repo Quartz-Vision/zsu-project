@@ -7,7 +7,7 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">№</th>
             <th scope="col">{% trans "Full name" %}</th>
             <th scope="col">{% trans "Military Rank" %}</th>
             <th scope="col">{% trans "TIN" %}</th>
@@ -26,5 +26,5 @@
         {% endfor %}
         </tbody>
     </table>
-    <button type="button" class="btn btn-primary">{% trans "Add" %}</button>
+    <a href="{{ host }}" type="button" class="btn btn-primary">{% trans "Add" %}</a>
 {% endblock %}

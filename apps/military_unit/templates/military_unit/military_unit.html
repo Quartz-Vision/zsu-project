@@ -2,12 +2,12 @@
 {% load bootstrap4 %}
 {% load i18n %}
 
-{% block title %}{% trans "Staff" %}{% endblock %}
+{% block title %}{% trans "Military unit" %}{% endblock %}
 {% block content %}
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">№</th>
             <th scope="col">{% trans "Name" %}</th>
             <th scope="col">{% trans "Military number" %}</th>
             <th scope="col">{% trans "Address" %}</th>
@@ -17,9 +17,9 @@
         {% for each in military_unit %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ each.name}}</td>
-                <td>{{ each.military_number }}</td>
-                <td>{{ each.address }}</td>
+                <td><a  class="font-weight-bold text-dark"  href="{{ host }}/military/{{ each.id }}">{{ each.military_unit.name}}</a></td>
+                <td>{{ each.military_unit.military_number }}</td>
+                <td>{{ each.military_unit.address }}</td>
             </tr>
         {% endfor %}
         </tbody>

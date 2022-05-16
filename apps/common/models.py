@@ -46,3 +46,15 @@ class StreetAddress(UUIDModel):
 
     def __str__(self):
         return f'{self.city}, {self.name}'
+
+
+class TimeStamp(models.Model):
+    """
+    Represents a basic model which store information about time
+    """
+
+    updated_at = models.DateTimeField(verbose_name="Updated at", auto_now=True, editable=False, null=True)
+    created_at = models.DateTimeField(verbose_name="Created at", auto_now_add=True, editable=False, null=True)
+
+    class Meta:
+        abstract = True

@@ -76,6 +76,10 @@ msgstr "Військове Звання"
 msgid "Military Ranks"
 msgstr "Військові Звання"
 
+#: apps/general/models.py:22
+msgid "Person military Rank"
+msgstr "Військові Звання(Фактично)"
+
 #: apps/general/models.py:32 apps/general/models.py:57
 msgid "Position"
 msgstr "Посада"
@@ -266,7 +270,11 @@ msgid "ZSU"
 msgstr "ЗСУ"
 
 #: apps/docs/models.py:18
-msgid "Military unit info"
+msgid "Military Unit Info"
+msgstr "Інформація про ВЧ"
+
+#: apps/docs/models.py:18
+msgid "Military Units Info"
 msgstr "Інформація про ВЧ"
 
 #: apps/docs/models.py:18
@@ -284,5 +292,33 @@ msgstr "ФІО"
 #: apps/docs/models.py:18
 msgid "Add"
 msgstr "Додати"
+
+#: apps/docs/models.py:18
+msgid "MU Commander"
+msgstr "Командир ВЧ"
+
+#: apps/docs/models.py:18
+msgid "Commander rank"
+msgstr "Звання командира"
+
+#: apps/docs/models.py:18
+msgid "Chief"
+msgstr "Начальник штабу"
+
+#: apps/docs/models.py:18
+msgid "Chief rank"
+msgstr "Звання начальника штабу"
+
+#: apps/docs/models.py:18
+msgid "Back"
+msgstr "Назад"
+
+#: apps/docs/models.py:18
+msgid "Reason Type"
+msgstr "Тип причини"
+
+#: apps/docs/models.py:18
+msgid "Reason Types"
+msgstr "Типи причин"
 
 

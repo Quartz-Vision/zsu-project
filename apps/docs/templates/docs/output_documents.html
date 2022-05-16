@@ -2,7 +2,7 @@
 {% load bootstrap4 %}
 {% load i18n %}
 
-{% block title %}{% trans "Incoming documents" %}{% endblock %}
+{% block title %}{% trans "Output documents" %}{% endblock %}
 {% block content %}
     <table class="table">
         <thead class="thead-dark">
@@ -13,11 +13,11 @@
         </tr>
         </thead>
         <tbody>
-        {% for each in incoming_documents %}
+        {% for each in output_documents %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ each.name}}</td>
-                <td>{{ each.created_at }}</td>
+                <td>{{ each.date }}</td>
             </tr>
         {% endfor %}
         </tbody>
