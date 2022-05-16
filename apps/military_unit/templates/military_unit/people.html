@@ -1,0 +1,30 @@
+{% extends "zsu_common/base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% trans "Person" %}{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">{% trans "Full name" %}</th>
+            <th scope="col">{% trans "Military Rank" %}</th>
+            <th scope="col">{% trans "TIN" %}</th>
+            <th scope="col">{% trans "Position" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for each in people %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><a  class="font-weight-bold text-dark"  href="{{ host }}/people/{{ each.id }}">{{ each.last_name}}<br>{{ each.first_name}}<br>{{ each.middle_name}}</a></td>
+                <td>{{ each.military_rank }}</td>
+                <td>{{ each.tin }}</td>
+                <td>{{ each.position }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary">{% trans "Add" %}</button>
+{% endblock %}

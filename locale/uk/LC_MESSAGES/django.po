@@ -211,7 +211,7 @@ msgstr "Термін контракту"
 
 #: apps/military_unit/models.py:83 apps/military_unit/models.py:84
 msgid "Staff"
-msgstr "Штаб"
+msgstr "Штат"
 
 #: apps/military_unit/models.py:90
 msgid "Military unit"
@@ -237,6 +237,14 @@ msgstr "Вхідний документ"
 msgid "Incoming documents"
 msgstr "Вхідні документи"
 
+#: apps/docs/models.py:11
+msgid "Output document"
+msgstr "Вихідний документ"
+
+#: apps/docs/models.py:11
+msgid "Output documents"
+msgstr "Вихідні документи"
+
 #: apps/docs/models.py:15
 msgid "Date"
 msgstr "Дата"
@@ -252,4 +260,29 @@ msgstr "Вихідний"
 #: apps/docs/models.py:18
 msgid "Type"
 msgstr "Тип"
+
+#: apps/docs/models.py:18
+msgid "ZSU"
+msgstr "ЗСУ"
+
+#: apps/docs/models.py:18
+msgid "Military unit info"
+msgstr "Інформація про ВЧ"
+
+#: apps/docs/models.py:18
+msgid "Military number"
+msgstr "Номер ВЧ"
+
+#: apps/docs/models.py:18
+msgid "Military card"
+msgstr "Карта військовослужбовця"
+
+#: apps/docs/models.py:18
+msgid "Full name"
+msgstr "ФІО"
+
+#: apps/docs/models.py:18
+msgid "Add"
+msgstr "Додати"
+
 

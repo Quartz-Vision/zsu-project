@@ -1,0 +1,27 @@
+{% extends "zsu_common/base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% trans "Staff" %}{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">{% trans "Name" %}</th>
+            <th scope="col">{% trans "Military number" %}</th>
+            <th scope="col">{% trans "Address" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for each in military_unit %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ each.name}}</td>
+                <td>{{ each.military_number }}</td>
+                <td>{{ each.address }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

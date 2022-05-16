@@ -234,6 +234,14 @@ msgstr ""
 msgid "Incoming documents"
 msgstr ""
 
+#: apps/docs/models.py:11
+msgid "Output document"
+msgstr ""
+
+#: apps/docs/models.py:11
+msgid "Output documents"
+msgstr ""
+
 #: apps/docs/models.py:15
 msgid "Date"
 msgstr ""
@@ -249,3 +257,32 @@ msgstr ""
 #: apps/docs/models.py:18
 msgid "Type"
 msgstr ""
+
+#: apps/docs/models.py:18
+msgid "ZSU"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Military unit info"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Full name"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Military card"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Back"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Add"
+msgstr ""
+
+#: apps/docs/models.py:18
+msgid "Military number"
+msgstr ""
+
