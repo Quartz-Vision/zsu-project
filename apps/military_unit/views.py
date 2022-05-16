@@ -2,6 +2,7 @@
 from django.conf import settings
 from django.views import generic
 
+from apps.docs.models import DocTemplate
 from apps.military_unit.forms import PersonForm, MilitaryUnitForm, AddToThePersonnelForm
 from apps.military_unit.models import Person, MilitaryUnit, MilitaryUnitInfo
 
@@ -56,3 +57,16 @@ class AddToThePersonnelView(generic.FormView):
     form_class = AddToThePersonnelForm
     success_url = "/success/"
     template_name = 'military_unit/add_to_personnel.html'
+
+    def get_initial(self):
+        """
+        Returns the initial data to use for forms on this view.
+        """
+        try:
+            document_template = DocTemplate.objects.get(name="ExtractFromTheOrder")
+            initial_data: dict = {
+                "document_in": document_template,
+            }
+            return initial_data
+        except DocTemplate.DoesNotExist:
+            return {}
