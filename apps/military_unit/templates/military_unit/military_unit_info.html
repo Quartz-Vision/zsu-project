@@ -1,0 +1,20 @@
+{% extends "zsu_common/base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% trans "Military unit" %}{% endblock %}
+{% block content %}
+    <div class="card">
+        <h5 class="card-header">{% trans "Military unit" %}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{ military_unit_info.military_unit.name }}</h5>
+            <p class="card-text">{% trans "Military number" %}: {{ military_unit_info.military_unit.military_number }}</p>
+            <p class="card-text">{% trans "MU Commander" %}: {{ military_unit_info.commander_name }}</p>
+            <p class="card-text">{% trans "Commander rank" %}: {{ military_unit_info.commander_rank }}</p>
+            <p class="card-text">{% trans "Chief" %}: {{ military_unit_info.chief_name }}</p>
+            <p class="card-text">{% trans "Chief rank" %}: {{ military_unit_info.chief_rank }}</p>
+            <p class="card-text">{% trans "Address" %}: {{ military_unit_info.military_unit.address }}</p>
+            <a href="{{ host }}/military/" class="btn btn-primary">{% trans "Back" %}</a>
+        </div>
+    </div>
+{% endblock %}

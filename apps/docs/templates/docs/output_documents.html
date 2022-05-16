@@ -1,0 +1,25 @@
+{% extends "zsu_common/base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% trans "Output documents" %}{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">{% trans "Name" %}</th>
+            <th scope="col">{% trans "Date" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for each in output_documents %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ each.name}}</td>
+                <td>{{ each.date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

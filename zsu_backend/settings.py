@@ -17,12 +17,10 @@ from dotenv import load_dotenv
 
 from corsheaders.defaults import default_headers, default_methods
 
-
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -32,7 +30,7 @@ SECRET_KEY = 'django-insecure-%gw0_k*8u*vv2hunj4us7b^3zh)%@bi9ct=gt#^$r#uj!72%-c
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') in ('true', '1', 'True')
-
+FRONTEND_HOST = os.getenv('FRONTEND_HOST')
 
 # Application definition
 
@@ -84,7 +82,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'zsu_backend.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -98,7 +95,6 @@ DATABASES = {
         "PORT": os.getenv("DB_PORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -118,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 LANGUAGE_CODE = 'uk'
@@ -131,12 +126,10 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # User substitution
 AUTH_USER_MODEL = 'user.User'
