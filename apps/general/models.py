@@ -48,6 +48,7 @@ class TariffCategory(UUIDModel):
         on_delete=models.CASCADE,
         verbose_name=_('Premium Grid'),
         related_name="tariff_category",
+        null=True,
     )
     identifier = models.CharField(max_length=255, verbose_name=_('Identifier'))
 
@@ -78,6 +79,7 @@ class Position(UUIDModel):
         on_delete=models.CASCADE,
         verbose_name=_('Tariff Grid'),
         related_name="position",
+        null=True,
     )
 
     def __str__(self):

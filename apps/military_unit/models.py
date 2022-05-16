@@ -123,6 +123,7 @@ class Staff(UUIDModel):
         on_delete=models.CASCADE,
         related_name='staff',
         verbose_name=_('Position'),
+        null=True,
     )
     tariff = models.ForeignKey(
         TariffGrid,
@@ -135,6 +136,7 @@ class Staff(UUIDModel):
         on_delete=models.CASCADE,
         related_name='staff',
         verbose_name=_('Military Specialization'),
+        null=True,
     )
     inner_military_rank = models.ForeignKey(
         MilitaryRank,
