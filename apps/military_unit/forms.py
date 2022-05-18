@@ -106,7 +106,7 @@ class AddToThePersonnelForm(forms.Form):
         person: Person = data.get('person')
         position: Position = data.get("position")
         reason: ReasonType = data.get("reason")
-        template_document = data.get("document_in").file
+        template_document = data.get("document_in")
         document_number = data.get("document_number")
         # Change a Personnel person field
         staff = get_object_or_404(Staff, position=position)
@@ -122,7 +122,9 @@ class AddToThePersonnelForm(forms.Form):
             document_number=document_number,
         )
         # Save document to database
-        generated_document: InMemoryUploadedFile = generate_document(template=template_document, context_data=context)
+        generated_document: InMemoryUploadedFile = generate_document(
+            template=template_document.file, context_data=context
+        )
         Docs(
             person=person,
             position=position,
