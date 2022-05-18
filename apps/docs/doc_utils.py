@@ -43,10 +43,12 @@ class ContextGenerator:
         full_name = " ".join(
             [item.upper() if i == 0 else item.title() for (i, item) in enumerate(declined_full_name.split(" "))]
         )
+        short_name = " ".join(
+            [item if i == 0 else f"{item[:1]}." for (i, item) in enumerate(declined_full_name.split(" "))]
+        ).title()
         military_unit_city = person.recruitment_office.address.city.name.title()
         military_unit_city_gent = cls._decline_words_by_case(words_to_parse=military_unit_city, case="gent")
         military_unit_name_datv = cls._decline_words_by_case(words_to_parse=person.recruitment_office.name, case="datv")
-        short_name = f"{person.last_name} {person.first_name[:1]}. {person.middle_name[:1]}.".title()
         military_rank_gent = cls._decline_words_by_case(words_to_parse=person.military_rank.name, case="gent")
         date_full = date.strftime("%d %M %Y")  # TODO: Ukrainian months
         military_unit = person.recruitment_office
@@ -90,9 +92,14 @@ class ContextGenerator:
         if case not in LIST_OF_CASES:
             raise AttributeError("Invalid case")
         try:
-            declined_by_case_words = [
-                morph.parse(word)[0].inflect({case})[0] for word in words_to_parse.split(" ") if word
-            ]
+            declined_by_case_words: list = []
+            for word in words_to_parse.split(" "):
+                parsed_word = morph.parse(word)
+                inflected = parsed_word[0].inflect({case})
+                if inflected:
+                    declined_by_case_words.append(inflected[0])
+                else:
+                    declined_by_case_words.append(word)
             return " ".join(declined_by_case_words)
         except Exception as e:
             # logging errors
