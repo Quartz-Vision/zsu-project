@@ -6,15 +6,19 @@ from apps.docs.models import DocTemplate, Docs
 
 class IncomingDocumentsView(generic.TemplateView):
     template_name = 'docs/incoming_docs.html'
-    extra_context = {
-        "incoming_documents": DocTemplate.objects.all(),
-        "host": settings.FRONTEND_HOST
-    }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['incoming_documents'] = DocTemplate.objects.all()
+        context["host"]: settings.FRONTEND_HOST
+        return context
 
 
 class OutputDocumentsView(generic.TemplateView):
     template_name = 'docs/output_documents.html'
-    extra_context = {
-        "output_documents": Docs.objects.all(),
-        "host": settings.FRONTEND_HOST
-    }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['output_documents'] = Docs.objects.all()
+        context["host"]: settings.FRONTEND_HOST
+        return context

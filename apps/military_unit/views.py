@@ -9,23 +9,31 @@ from apps.military_unit.models import Person, MilitaryUnit, MilitaryUnitInfo, St
 
 class StaffView(generic.TemplateView):
     template_name = 'military_unit/staff.html'
-    extra_context = {
-        "staff": Staff.objects.all(),
-        "host": settings.FRONTEND_HOST
-    }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['staff'] = Staff.objects.all()
+        context["host"]: settings.FRONTEND_HOST
+        return context
 
 
 class PeopleView(generic.TemplateView):
     template_name = 'military_unit/people.html'
-    extra_context = {
-        "people": Person.objects.all(),
-        "host": settings.FRONTEND_HOST
-    }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['people'] = Person.objects.all()
+        context["host"]: settings.FRONTEND_HOST
+        return context
 
 
 class PersonView(generic.TemplateView):
     template_name = 'military_unit/person.html'
-    extra_context = {"host": settings.FRONTEND_HOST}
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["host"]: settings.FRONTEND_HOST
+        return context
 
     def get(self, request, *args, **kwargs):
         pk = kwargs.get("pk", None)
@@ -37,10 +45,12 @@ class PersonView(generic.TemplateView):
 
 class MilitaryUnitView(generic.TemplateView):
     template_name = 'military_unit/military_unit.html'
-    extra_context = {
-        "military_unit": MilitaryUnitInfo.objects.all(),
-        "host": settings.FRONTEND_HOST
-    }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['military_unit'] = MilitaryUnitInfo.objects.all()
+        context["host"]: settings.FRONTEND_HOST
+        return context
 
 
 class MilitaryUnitInfoView(generic.TemplateView):
@@ -48,6 +58,11 @@ class MilitaryUnitInfoView(generic.TemplateView):
     extra_context = {
         "host": settings.FRONTEND_HOST
     }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["host"]: settings.FRONTEND_HOST
+        return context
 
     def get(self, request, *args, **kwargs):
         pk = kwargs.get("pk", None)
