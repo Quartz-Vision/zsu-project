@@ -50,7 +50,7 @@ class ContextGenerator:
         military_unit_city_gent = cls._decline_words_by_case(words_to_parse=military_unit_city, case="gent")
         military_unit_name_datv = cls._decline_words_by_case(words_to_parse=person.recruitment_office.name, case="datv")
         military_rank_gent = cls._decline_words_by_case(words_to_parse=person.military_rank.name, case="gent")
-        date_full = date.strftime("%d %M %Y")  # TODO: Ukrainian months
+        date_full = date.strftime("%d %B %Y")  # TODO: Ukrainian months
         military_unit = person.recruitment_office
         try:
             military_unit_info = military_unit.military_unit_info
@@ -69,7 +69,7 @@ class ContextGenerator:
             "full_name": full_name,
             "position_name": position.name.lower(),
             "military_unit_number": person.recruitment_office.military_number,
-            "military_unit_name": military_unit_name_datv,
+            "military_unit_name": military_unit_name_datv.title(),
             "military_specialization_identifier": person.military_specialization.identifier,
             "birth_year": person.birth_date.year,
             "tin": person.tin,

@@ -124,9 +124,11 @@ class AddToThePersonnelForm(forms.Form):
         # Save document to database
         generated_document: InMemoryUploadedFile = generate_document(template=template_document, context_data=context)
         Docs(
-            date=date,
+            person=person,
+            position=position,
             reason=reason,
-            name=person.full_name,
-            number=document_number,
+            template_document=template_document,
+            document_number=document_number,
+            date=date,
             file=generated_document,
         ).save()
