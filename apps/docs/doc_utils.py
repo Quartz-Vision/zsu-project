@@ -75,7 +75,7 @@ class ContextGenerator:
             "award_in_percents": position.tariff.tariff_category.premium_grid.premium,
             "allowance_in_percents": allowance_in_percents,
             "reason": reason.name.lower(),
-            "military_rank_by_personnel": staff.inner_military_rank.lower(),
+            "military_rank_by_personnel": str(staff.inner_military_rank).lower(),
             "short_name": short_name,
             "commander_rank": military_unit_info.commander_rank,
             "commander_name": military_unit_info.commander_name,
