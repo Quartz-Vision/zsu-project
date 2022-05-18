@@ -1,11 +1,12 @@
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.exceptions import ObjectDoesNotExist
 from datetime import datetime
 
 from docxtpl import DocxTemplate
 from pymorphy2 import MorphAnalyzer
 
-from apps.military_unit.models import Person, Staff
+from apps.military_unit.models import Person, Staff, MilitaryUnit, MilitaryUnitInfo
 from apps.general.models import Position, ReasonType
 
 
@@ -46,7 +47,10 @@ class ContextGenerator:
         military_rank_gent = cls._decline_words_by_case(words_to_parse=person.military_rank.name, case="gent")
         date_full = date.strftime("%d %M %Y")  # TODO: Ukrainian months
         military_unit = person.recruitment_office
-        military_unit_info = getattr(military_unit, "military_unit_info")
+        try:
+            military_unit_info = military_unit.military_unit_info
+        except MilitaryUnitInfo.DoesNotExist:
+            raise ObjectDoesNotExist("No related military unit info")
         allowance_in_percents = 65
 
         context: dict = {
