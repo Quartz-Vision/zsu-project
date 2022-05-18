@@ -154,4 +154,7 @@ class Staff(UUIDModel):
         return self.position.tariff.salary
 
     def __str__(self):
-        return f'{self.position.name} ({self.inner_military_rank}) - {self.person.full_name}'
+        if self.person:
+            return f'{self.position.name} ({self.inner_military_rank}) - {self.person.full_name}'
+        else:
+            return f'{self.position.name} ({self.inner_military_rank})'
