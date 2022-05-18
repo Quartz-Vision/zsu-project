@@ -82,7 +82,11 @@ class ContextGenerator:
         """Returns the declined by case words"""
         if case not in LIST_OF_CASES:
             raise AttributeError("Invalid case")
-        declined_by_case_words = [
-            morph.parse(word)[0].inflect({case})[0] for word in words_to_parse.split(" ") if word
-        ]
-        return " ".join(declined_by_case_words)
+        try:
+            declined_by_case_words = [
+                morph.parse(word)[0].inflect({case})[0] for word in words_to_parse.split(" ") if word
+            ]
+            return " ".join(declined_by_case_words)
+        except Exception as e:
+            # logging errors
+            return words_to_parse
