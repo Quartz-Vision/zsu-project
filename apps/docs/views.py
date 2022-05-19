@@ -34,11 +34,10 @@ class DocumentView(generic.TemplateView):
         context["media"] = settings.MEDIA_URL
         pk = self.kwargs.get("pk", None)
         if pk is not None:
-            person = Person.objects.filter(id=pk)
+            person = Person.objects.filter(id=pk).first()
             if person:
-                full_name = f"{person.last_name} {person.middle_name} {person.first_name}"
-                doc_list = Docs.objects.filter(name=full_name)
-                context['doc'] = doc_list.first().file
+                document = Docs.objects.filter(person=person).first()
+                context['doc'] = document.file
             else:
                 doc = Docs.objects.get(id=pk)
                 context['doc'] = doc.file
