@@ -1,0 +1,9 @@
+{% extends "zsu_common/base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% trans "Document view" %}{% endblock %}
+{% block content %}
+    <iframe class="w-100" style="height: 1050px;" src="https://docs.google.com/gview?url={{ host }}{{ media }}{{ doc }}&embedded=true"></iframe>
+    <a href="{{ host }}{{ media }}{{ doc }}" class="btn btn-primary">{% trans "Download" %}</a>
+{% endblock %}

@@ -9,8 +9,8 @@
         <tr>
             <th scope="col">№</th>
             <th scope="col">{% trans "Position" %}</th>
-            <th scope="col">{% trans "Position" %}Пос</th>
-            <th scope="col">{% trans "Position" %}Тариф</th>
+            <th scope="col">{% trans "Salary" %}</th>
+            <th scope="col">{% trans "Tariff Category" %}</th>
             <th scope="col">{% trans "Military Rank" %}</th>
             <th scope="col">{% trans "Person military Rank" %}</th>
             <th scope="col">{% trans "Full name" %}</th>
@@ -22,7 +22,7 @@
                 <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ each.position }}</td>
                 <td>{{ each.salary }}</td>
-                <td>{{ each.tariff.tariff_category.identifierx }}</td>
+                <td>{{ each.tariff.tariff_category.identifier }}</td>
                 <td>{{ each.inner_military_rank }}</td>
                 <td>{{ each.military_rank_factually }}</td>
                 <td>{{ each.person.full_name }}</td>
