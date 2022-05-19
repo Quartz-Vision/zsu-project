@@ -106,7 +106,7 @@ class AddToThePersonnelForm(forms.Form):
         person: Person = data.get('person')
         position: Position = data.get("position")
         reason: ReasonType = data.get("reason")
-        template_document = data.get("document_in")
+        template_document: DocTemplate = data.get("document_in")
         document_number = data.get("document_number")
         # Change a Personnel person field
         staff = get_object_or_404(Staff, position=position)
