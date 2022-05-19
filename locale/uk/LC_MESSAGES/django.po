@@ -325,10 +325,6 @@ msgstr "Типи причин"
 msgid "Download"
 msgstr "Завантажити"
 
-#: apps/military_unit/template/military_unit/staff.html:18
-msgid "Salary"
-msgstr "Посадовий оклад"
-
 #: apps/docs/templates/docs/staff:18
 msgid "Appoint to the position"
 msgstr "Призначити на посаду"

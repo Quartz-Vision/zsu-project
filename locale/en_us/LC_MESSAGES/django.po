@@ -330,10 +330,6 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: apps/military_unit/template/military_unit/staff.html:18
-msgid "Salary"
-msgstr ""
-
 #: apps/docs/templates/docs/staff:18
 msgid "Appoint to the position"
 msgstr ""
