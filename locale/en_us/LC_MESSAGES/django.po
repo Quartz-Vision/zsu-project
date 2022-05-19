@@ -325,3 +325,23 @@ msgstr ""
 #: apps/docs/models.py:18
 msgid "Reason Types"
 msgstr ""
+
+#: apps/docs/templates:18
+msgid "Download"
+msgstr ""
+
+#: apps/military_unit/template/military_unit/staff.html:18
+msgid "Salary"
+msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Appoint to the position"
+msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Document view"
+msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Alphabetical book"
+msgstr ""

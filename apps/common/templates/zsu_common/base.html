@@ -16,7 +16,7 @@
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-            <a class="navbar-brand" href="#">{% trans 'ZSU' %}</a>
+            <a class="navbar-brand" href="{{ host }}/">{% trans 'ZSU' %}</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -36,6 +36,10 @@
                     </li>
                 </ul>
             </div>
+            <div>
+                <a href="{{ host }}/add_to_personnel/" class="btn btn-primary">{% trans "Appoint to the position" %}</a>
+            </div>
+
         </nav>
         <div class="container">
             <main role="main">

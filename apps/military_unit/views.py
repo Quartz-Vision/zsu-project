@@ -33,14 +33,11 @@ class PersonView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["host"]: settings.FRONTEND_HOST
-        return context
-
-    def get(self, request, *args, **kwargs):
-        pk = kwargs.get("pk", None)
+        pk = self.kwargs.get("pk", None)
         if pk is not None:
             person = Person.objects.get(id=pk)
-            self.extra_context["person"] = person
-        return super(PersonView, self).get(request, *args, **kwargs)
+            context["person"] = person
+        return context
 
 
 class MilitaryUnitView(generic.TemplateView):
@@ -62,14 +59,11 @@ class MilitaryUnitInfoView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["host"]: settings.FRONTEND_HOST
-        return context
-
-    def get(self, request, *args, **kwargs):
-        pk = kwargs.get("pk", None)
+        pk = self.kwargs.get("pk", None)
         if pk is not None:
             military_unit_info = MilitaryUnitInfo.objects.get(id=pk)
-            self.extra_context["military_unit_info"] = military_unit_info
-        return super(MilitaryUnitInfoView, self).get(request, *args, **kwargs)
+            context["military_unit_info"] = military_unit_info
+        return context
 
 
 class SuccessPage(generic.TemplateView):

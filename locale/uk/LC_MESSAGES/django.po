@@ -321,4 +321,24 @@ msgstr "Тип причини"
 msgid "Reason Types"
 msgstr "Типи причин"
 
+#: apps/docs/templates:18
+msgid "Download"
+msgstr "Завантажити"
+
+#: apps/military_unit/template/military_unit/staff.html:18
+msgid "Salary"
+msgstr "Посадовий оклад"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Appoint to the position"
+msgstr "Призначити на посаду"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Document view"
+msgstr "Документ"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Alphabetical book"
+msgstr "Алфавітна книга"
+
 
