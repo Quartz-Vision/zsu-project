@@ -7,7 +7,7 @@
 {% block title %}ZSU{% endblock %}
 
 {% block content %}
-    <form action="" method="post"> {% csrf_token %}
+    <form action="" method="post" class="mx-4"> {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
             <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>

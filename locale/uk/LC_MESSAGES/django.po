@@ -78,7 +78,7 @@ msgstr "Військові Звання"
 
 #: apps/general/models.py:22
 msgid "Person military Rank"
-msgstr "Військові Звання(Фактично)"
+msgstr "Військове Звання(Фактично)"
 
 #: apps/general/models.py:32 apps/general/models.py:57
 msgid "Position"
@@ -336,5 +336,9 @@ msgstr "Документ"
 #: apps/docs/templates/docs/staff:18
 msgid "Alphabetical book"
 msgstr "Алфавітна книга"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Add person"
+msgstr "Додати військовослужбовця"
 
 
