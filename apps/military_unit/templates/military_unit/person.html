@@ -8,10 +8,26 @@
         <h5 class="card-header">{% trans "Military card" %}</h5>
         <div class="card-body">
             <h5 class="card-title">{{ person.full_name }}</h5>
-            <p class="card-text">{% trans "Birth date" %}: {{ person.birth_date }}</p>
-            <p class="card-text">{% trans "Military rank" %}: {{ person.military_rank }}</p>
             <p class="card-text">{% trans "Position" %}: {{ person.position }}</p>
+            <p class="card-text">{% trans "Military rank" %}: {{ person.military_rank }}</p>
+
+            <p class="card-text">{% trans "TIN" %}: {{ person.tin }}</p>
+            <p class="card-text">{% trans "Birth date" %}: {{ person.birth_date }}</p>
+
+            <p class="card-text">{% trans "Place of residence" %}: {{ person.place_of_residence }}</p>
             <p class="card-text">{% trans "Phone number" %}: {{ person.phone_number }}</p>
+
+            <p class="card-text">{% trans "Gender" %}: {{ person.gender }}</p>
+            <p class="card-text">{% trans "Family status" %}: {{ person.family_status }}</p>
+            <p class="card-text">{% trans "Children number" %}: {{ person.children_number }}</p>
+            <p class="card-text">{% trans "Recruitment office" %}: {{ person.recruitment_office }}</p>
+            <p class="card-text">{% trans "Length of service" %}: {{ person.length_of_service }}</p>
+
+            <p class="card-text">{% trans "Military specialization" %}: {{ person.military_specialization }}</p>
+            <p class="card-text">{% trans "Type of contract" %}: {{ person.type_of_contract }}</p>
+            <p class="card-text">{% trans "Contract term" %}: {{ person.contract_term }}</p>
+
+
             <a href="{{ host }}/people/" class="btn btn-primary">{% trans "Back" %}</a>
         </div>
     </div>

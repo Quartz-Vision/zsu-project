@@ -1,12 +1,19 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from apps.common.models import StreetAddress, UUIDModel
+from apps.common.models import StreetAddress, UUIDModel, FamilyStatusTypes
 from apps.general.models import MilitaryRank, MilitarySpecialization, TariffGrid, Position
 
 
-class MilitaryUnit(UUIDModel):
+# Choices
+class ContractTypes(models.TextChoices):
+    MOBILIZATION = "мобілізація", "мобілізація"
+    CONSCRIPTION = "строкова служба", "строкова служба"
+    CONTRACT = "контракт", "контракт"
 
+
+# Models
+class MilitaryUnit(UUIDModel):
     class Meta:
         verbose_name = _('Military Unit')
         verbose_name_plural = _('Military Units')
@@ -25,7 +32,6 @@ class MilitaryUnit(UUIDModel):
 
 
 class MilitaryUnitInfo(UUIDModel):
-
     class Meta:
         verbose_name = _('Military Unit Info')
         verbose_name_plural = _('Military Units Info')
@@ -41,6 +47,9 @@ class MilitaryUnitInfo(UUIDModel):
     commander_rank = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Commander rank'))
     chief_name = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Chief name'))
     chief_rank = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Chief rank'))
+
+    def __str__(self):
+        return f"{_('Military Unit Info')}, {self.military_unit.name} (номер {self.military_unit.military_number})"
 
 
 class Person(UUIDModel):
@@ -69,8 +78,9 @@ class Person(UUIDModel):
         on_delete=models.CASCADE,
         related_name='position',
     )
-    family_status = models.CharField(max_length=255, verbose_name=_('Family status'))
+    family_status = models.CharField(max_length=255, choices=FamilyStatusTypes.choices, verbose_name=_('Family status'))
     children_number = models.PositiveIntegerField(verbose_name=_('Children number'))
+    place_of_residence = models.CharField(max_length=255, verbose_name=_("Place of residence"))
 
     phone_number = models.CharField(max_length=20, verbose_name=_('Phone number'))
 
@@ -81,6 +91,13 @@ class Person(UUIDModel):
         on_delete=models.CASCADE,
         related_name='recruitment_persons',
         verbose_name=_('Recruitment office')
+    )
+    military_unit_from = models.ForeignKey(
+        MilitaryUnit,
+        on_delete=models.CASCADE,
+        related_name='persons_who_come_from',
+        verbose_name=_('Military Unit where did come from'),
+        null=True,
     )
     military_rank = models.ForeignKey(
         MilitaryRank,
@@ -94,8 +111,22 @@ class Person(UUIDModel):
         related_name='persons',
         verbose_name=_('Military specialization')
     )
+    cash_payments = models.ForeignKey(
+        TariffGrid,
+        on_delete=models.CASCADE,
+        related_name='persons',
+        verbose_name=_('Tariff'),
+        null=True,
+    )
     length_of_service = models.PositiveIntegerField(verbose_name=_('Length of service'))
+    type_of_contract = models.CharField(
+        max_length=100,
+        choices=ContractTypes.choices,
+        verbose_name=_("Type of contract")
+    )
     contract_term = models.PositiveIntegerField(verbose_name=_('Contract term'))
+    vacation = models.BooleanField(default=False, verbose_name=_("Vacation"))
+    vacation_days = models.IntegerField(verbose_name=_("Vacation days"))
 
     @property
     def full_name(self):
@@ -155,6 +186,6 @@ class Staff(UUIDModel):
 
     def __str__(self):
         if self.person:
-            return f'{self.position.name} ({self.inner_military_rank}) - {self.person.full_name}'
+            return f'{self.position.name}, {self.person.full_name}'
         else:
-            return f'{self.position.name} ({self.inner_military_rank})'
+            return f'{self.position.name}'

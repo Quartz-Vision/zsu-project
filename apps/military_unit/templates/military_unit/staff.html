@@ -24,8 +24,13 @@
                 <td>{{ each.salary }}</td>
                 <td>{{ each.tariff.tariff_category.identifier }}</td>
                 <td>{{ each.inner_military_rank }}</td>
+                {% if each.person %}
                 <td>{{ each.military_rank_factually }}</td>
                 <td>{{ each.person.full_name }}</td>
+                {% else %}
+                <td>-</td>
+                <td>Вакант</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>

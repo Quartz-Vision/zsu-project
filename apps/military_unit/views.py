@@ -77,6 +77,15 @@ class PersonCreateView(generic.CreateView):
     success_url = "/add_to_personnel/"
     template_name = 'military_unit/person_create.html'
 
+    def get_initial(self):
+        """
+        Returns the initial data to use for forms on this view.
+        """
+        initial_data: dict = {
+            "vacation_days": 0,
+        }
+        return initial_data
+
 
 class MilitaryUnitCreateView(generic.CreateView):
     model = MilitaryUnit

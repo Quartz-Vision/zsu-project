@@ -4,6 +4,18 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+# Choices
+class FamilyStatusTypes(models.TextChoices):
+    MARRIED_MAN = "одружений", "одружений"
+    NOT_MARRIED_MAN = "неодружений", "неодружений"
+    MARRIED_WOMAN = "заміжня", "заміжня"
+    NOT_MARRIED_WOMAN = "незаміжня", "незаміжня"
+    DIVORCED_MAN = "розлучений", "розлучений"
+    DIVORCED_WOMAN = "розлучена", "розлучена"
+    WIDOW = "вдова", "вдова"
+    WIDOWER = "вдівець", "вдівець"
+
+
 class UUIDModel(models.Model):
     """
     Base abstract model that provides 'uuid' primary key field to replace the default PK
