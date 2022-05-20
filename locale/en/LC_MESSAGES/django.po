@@ -337,3 +337,7 @@ msgstr ""
 #: apps/docs/templates/docs/staff:18
 msgid "Alphabetical book"
 msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Add person"
+msgstr ""

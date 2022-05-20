@@ -36,19 +36,35 @@
                     </li>
                 </ul>
             </div>
-            <div>
-                <a href="{{ host }}/add_to_personnel/" class="btn btn-primary">{% trans "Appoint to the position" %}</a>
+            <div class="px-3">
+                <a href="{{ host }}/add_to_personnel/" class="btn btn-primary">{% trans "Add person" %}</a>
+            </div>
+            <div class="px-3">
+                <a href="{{ host }}/person_create/" class="btn btn-primary">{% trans "Appoint to the position" %}</a>
             </div>
 
         </nav>
-        <div class="container">
+        <div class="container-fluid">
             <main role="main">
                 <div class="row justify-content-center">
-                    <div class="col-sm-8 my-5">
+                    <div class="col-xl col-sm-12 my-5" style="padding: 0;">
                         {% block content %}{% endblock %}
                     </div>
                 </div>
             </main>
         </div>
+    <script>
+        const navItems = document.querySelectorAll(".nav-link");
+        let path = window.location.pathname.includes("docs") ? window.location.pathname.split("/")[2] : window.location.pathname.split("/")[1]
+
+
+        navItems.forEach((item) => {
+            if(item.attributes[1].value.includes(path)) {
+                item.classList.add("active")
+                item.classList.add("font-weight-bold")
+            }
+        })
+
+    </script>
     </body>
 </html>

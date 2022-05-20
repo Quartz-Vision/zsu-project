@@ -4,6 +4,8 @@
 
 {% block title %}{% trans "Document view" %}{% endblock %}
 {% block content %}
-    <iframe class="w-100" style="height: 1050px;" src="https://docs.google.com/gview?url={{ host }}{{ media }}{{ doc }}&embedded=true"></iframe>
-    <a href="{{ host }}{{ media }}{{ doc }}" class="btn btn-primary">{% trans "Download" %}</a>
+    <div class="w-100 p-3">
+        <iframe class="w-100" style="height: 1050px;" src="https://docs.google.com/gview?url={{ host }}{{ media }}{{ doc }}&embedded=true"></iframe>
+        <a href="{{ host }}{{ media }}{{ doc }}" class="btn btn-primary m-3">{% trans "Download" %}</a>
+    </div>
 {% endblock %}

@@ -13,7 +13,7 @@ from apps.military_unit.views import (
 
 
 urlpatterns = [
-    path('', PersonCreateView.as_view(), name='person_create'),
+    path('person_create/', PersonCreateView.as_view(), name='person_create'),
     path('people/', PeopleView.as_view(), name='people'),
     path('people/<uuid:pk>/', PersonView.as_view(), name='person'),
     path('staff/', StaffView.as_view(), name='staff'),

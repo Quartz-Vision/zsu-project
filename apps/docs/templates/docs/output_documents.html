@@ -16,7 +16,7 @@
         {% for each in output_documents %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td><a  class="font-weight-bold text-dark"  href="{{ host }}/docs/preview/{{ each.id }}/">{{ each.person.full_name}}</a></td>
+                <td><a  class="font-weight-bold text-dark"  href="{{ host }}/docs/output/preview/{{ each.id }}/">{{ each.person.full_name}}</a></td>
                 <td>{{ each.date }}</td>
             </tr>
         {% endfor %}
