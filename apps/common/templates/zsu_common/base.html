@@ -37,10 +37,10 @@
                 </ul>
             </div>
             <div class="px-3">
-                <a href="{{ host }}/add_to_personnel/" class="btn btn-primary">{% trans "Add person" %}</a>
+                <a href="{{ host }}/" class="btn btn-primary">{% trans "Add person" %}</a>
             </div>
             <div class="px-3">
-                <a href="{{ host }}/person_create/" class="btn btn-primary">{% trans "Appoint to the position" %}</a>
+                <a href="{{ host }}/add_to_personnel/" class="btn btn-primary">{% trans "Appoint to the position" %}</a>
             </div>
 
         </nav>
@@ -56,14 +56,16 @@
     <script>
         const navItems = document.querySelectorAll(".nav-link");
         let path = window.location.pathname.includes("docs") ? window.location.pathname.split("/")[2] : window.location.pathname.split("/")[1]
-
-
-        navItems.forEach((item) => {
-            if(item.attributes[1].value.includes(path)) {
-                item.classList.add("active")
-                item.classList.add("font-weight-bold")
+        if(window.location.pathname !== "/") {
+            navItems.forEach((item) => {
+                if(item.attributes[1].value.includes(path)) {
+                    item.classList.add("active")
+                    item.classList.add("font-weight-bold")
             }
         })
+        }
+
+
 
     </script>
     </body>
