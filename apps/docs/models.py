@@ -1,5 +1,6 @@
-from django.utils.translation import gettext_lazy as _
+from pathlib import Path
 
+from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 from apps.common.models import UUIDModel, TimeStamp
@@ -17,7 +18,7 @@ class DocTemplate(UUIDModel, TimeStamp):
     file = models.FileField(upload_to="doc_templates/", verbose_name=_('File'))
 
     def __str__(self):
-        return self.name
+        return f"Template {self.name}"
 
 
 class Docs(UUIDModel, TimeStamp):
@@ -39,5 +40,12 @@ class Docs(UUIDModel, TimeStamp):
     date = models.DateField(verbose_name=_('Date'))
     file = models.FileField(upload_to="generated_docs/", verbose_name=_('File'))
 
+    def filename(self):
+        return Path(self.file.name).stem
+
+    @property
+    def title(self):
+        return f"Document ({self.id})"
+
     def __str__(self):
-        return f"Document ({self.id}) - {self.person.full_name if self.person else None} "
+        return self.title

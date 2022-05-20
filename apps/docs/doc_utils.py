@@ -22,7 +22,7 @@ def generate_document(template, context_data: dict) -> InMemoryUploadedFile:
     buffer = BytesIO()
     template.save(buffer)
     buffer.seek(0)
-    filename = "generated_doc.docx"
+    filename = f"Vutyag_z_nakazu_No_{context_data.get('document_number')}.docx"
     generated_file = InMemoryUploadedFile(buffer, "file", filename, None, buffer.tell(), None)
     return generated_file
 
