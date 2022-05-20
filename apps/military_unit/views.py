@@ -1,6 +1,7 @@
 # form view
 from django.conf import settings
 from django.views import generic
+from django.urls import reverse
 
 from apps.docs.models import DocTemplate
 from apps.military_unit.forms import PersonForm, MilitaryUnitForm, AddToThePersonnelForm
@@ -76,6 +77,15 @@ class PersonCreateView(generic.CreateView):
     success_url = "/add_to_personnel/"
     template_name = 'military_unit/person_create.html'
 
+    def get_initial(self):
+        """
+        Returns the initial data to use for forms on this view.
+        """
+        initial_data: dict = {
+            "vacation_days": 0,
+        }
+        return initial_data
+
 
 class MilitaryUnitCreateView(generic.CreateView):
     model = MilitaryUnit
@@ -86,8 +96,11 @@ class MilitaryUnitCreateView(generic.CreateView):
 
 class AddToThePersonnelView(generic.FormView):
     form_class = AddToThePersonnelForm
-    success_url = "/success/"
     template_name = 'military_unit/add_to_personnel.html'
+
+    def get_success_url(self):
+        person_id = self.request.POST.get('person')
+        return reverse("doc_preview", kwargs={"pk": person_id})
 
     def get_initial(self):
         """

@@ -39,13 +39,19 @@ class PersonForm(forms.ModelForm):
             'position',
             'family_status',
             'children_number',
+            'place_of_residence',
             'phone_number',
             'tin',
             'recruitment_office',
+            'military_unit_from',
             'military_rank',
             'military_specialization',
+            'cash_payments',
             'length_of_service',
+            'type_of_contract',
             'contract_term',
+            'vacation',
+            'vacation_days',
         )
 
     def clean(self):
