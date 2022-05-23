@@ -77,6 +77,7 @@ class Person(UUIDModel):
         Position,
         on_delete=models.CASCADE,
         related_name='position',
+        verbose_name=_("Position")
     )
     family_status = models.CharField(max_length=255, choices=FamilyStatusTypes.choices, verbose_name=_('Family status'))
     children_number = models.PositiveIntegerField(verbose_name=_('Children number'))

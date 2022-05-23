@@ -341,4 +341,23 @@ msgstr "Алфавітна книга"
 msgid "Add person"
 msgstr "Додати військовослужбовця"
 
+#: apps/docs/templates/docs/staff:18
+msgid "Place of residence"
+msgstr "Місце проживання"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Type of contract"
+msgstr "Тип контракту"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Vacation"
+msgstr "Відпустка"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Vacation days"
+msgstr "Дні відпустки"
+
+#: apps/docs/templates/docs/staff:18
+msgid "Military Unit where did come from"
+msgstr "Військова частина походження"
 
