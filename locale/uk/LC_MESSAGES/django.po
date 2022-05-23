@@ -359,5 +359,5 @@ msgstr "Дні відпустки"
 
 #: apps/docs/templates/docs/staff:18
 msgid "Military Unit where did come from"
-msgstr "Військова частина походження"
+msgstr "Військова частина звідки прибув"
 
