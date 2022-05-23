@@ -18,7 +18,7 @@
         {% for each in people %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td><a  class="font-weight-bold text-dark"  href="{{ host }}/people/{{ each.id }}">{{ each.last_name}}<br>{{ each.first_name}}<br>{{ each.middle_name}}</a></td>
+                <td><a  class="font-weight-bold text-dark"  href="{{ host }}/people/{{ each.id }}">{{ each.full_name}}</a></td>
                 <td>{{ each.military_rank }}</td>
                 <td>{{ each.tin }}</td>
                 <td>{{ each.position }}</td>
