@@ -345,3 +345,25 @@ msgstr ""
 #: apps/docs/templates/docs/staff:18
 msgid "Add person"
 msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Place of residence"
+msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Type of contract"
+msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Vacation"
+msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Vacation days"
+msgstr ""
+
+#: apps/docs/templates/docs/staff:18
+msgid "Military Unit where did come from"
+msgstr ""
+
+
